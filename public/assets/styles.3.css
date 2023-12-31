@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f6f6f6;
+}
+.container{
+    display: flex;
+}
+#main-section{
+    margin-top: 2%;
+    border-top: 1px solid rgba(109, 109, 109, 0.373);
+    height: 70vh;
+}
+.form{
+    position: absolute;
+    top: -40%;
+    left: 35%;
+}
+#footer{
+    background-color: #373737;
+    margin-top: 5%;
+}
+#footer hr{
+    width: 95%;
+    margin-left: 2.5%;
+}
+#form input{
+    height: 40px;
+}
+#text-area{
+    width: 80%;
+    margin-left: 10%;
+}
+.make-petition-txt{
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+    #footer{
+        display: block;
+        width: 100%;
+        margin-top: 27%;
+        padding-top:10%;
+    }
+    .form{
+        top: 30%;
+        left: 5%;
+    }
+    .submit-btn{
+        width: 80%;
+    }
+    .make-petition-txt{
+        font-size: 25px;
+        font-family: 'Poppins',sans-serif;
+        text-align: center;
+        padding-top: 10%;
+        display: block;
+    }
+}
+
+@media (min-width:481px) and (max-width:760px) {
+    #footer{
+        display: block;
+        width: 100%;
+        margin-top: 27%;
+        padding-top:10%;
+    }
+    .form{
+        top: 10%;
+        left: 15%;
+    }
+    .submit-btn{
+        width: 80%;
+    }
+    .make-petition-txt{
+        font-size: 25px;
+        font-family: 'Poppins',sans-serif;
+        text-align: center;
+        padding-top: 10%;
+        display: block;
+    }
+}
+
+@media (min-width:761px) and (max-width:1024px) {
+    #footer{
+        display: block;
+        width: 100%;
+        margin-top: 37%;
+        padding-top:10%;
+    }
+    .form{
+        top: 10%;
+        left: 25%;
+    }
+    .submit-btn{
+        width: 80%;
+    }
+    .make-petition-txt{
+        font-size: 25px;
+        font-family: 'Poppins',sans-serif;
+        text-align: center;
+        padding-top: 20%;
+        display: block;
+    }
+}
