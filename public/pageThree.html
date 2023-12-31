@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unitednationfreegaza.com/makepetition</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles.3.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles1.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logoBox">
+                <div class="logo-details">
+                <img src="./assets/images/icons8-world-health-organization-96.png">
+                <h2 id="logo">UNITED<br>NATIONS</h2>
+                </div>
+                <div class="header-txt">
+                    <h3>Vote for a ceasefire <br>The world needs to be a better place</h3>
+                </div>
+            </div>
+            <!-- <div class="vote-div">
+                <a href="#" class="vote">Petition</a>
+            </div> -->
+        </nav>
+    </header>
+    
+    <section id="main-section">
+        <h3 class="make-petition-txt">Send Petition</h3>
+        <div class="container">
+            <div class="form-content">
+                <div class="form" id="form">
+                  <input id="F_email" value="Campaign:   Stop Gaza-Isreal War" readonly/>
+                  <input id="F_phone" value="UN Section:  Humanitarianism" readonly/>
+                  <input id="F_email" value="Petition Number: 15,987,086" readonly/>
+                  <textarea name="text" id="text-area" cols="30" rows="10" placeholder="A short message for the union"></textarea>
+                  <button class="submit-btn" id="p-btn">
+                      Make petition
+                  </button>
+                </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer-container">
+        <div class="footer-logo">
+            <img src="./assets/images/icons8-united-nations-50.png">
+            <h2>United<br>Nations</h2>
+        </div>
+        <div class="donate-link">
+            <a href="#">Petition</a>
+        </div>
+    </div>
+        <hr>
+    </footer>
+    <script>
+        const pBtn = document.getElementById('p-btn');
+        
+        pBtn.addEventListener('click',() =>{
+            alert("Petition Sucessful!")
+            window.location.href = "index.html"
+        })
+    
+    </script>
+</body>
+</html>

